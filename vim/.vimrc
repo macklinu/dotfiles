@@ -19,4 +19,16 @@ filetype plugin indent on
 " color scheme
 syntax enable
 set background=dark
-colorscheme base16-eighties
+colorscheme base16-solarized
+
+" search defaults
+set incsearch
+set ignorecase
+set smartcase
+set nohlsearch
+
+set cursorline
+set number
+
+" Remove whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
