@@ -31,5 +31,9 @@ set nohlsearch
 set cursorline
 set number
 
+" j and k mash escape
+inoremap jk <Esc>
+inoremap kj <Esc>
+
 " Remove whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
