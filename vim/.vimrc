@@ -13,6 +13,7 @@ Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'chriskempson/base16-vim'
 call vundle#end()
 filetype plugin indent on
