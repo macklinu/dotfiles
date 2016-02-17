@@ -10,6 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
+Plugin 'scrooloose/nerdtree'
 Plugin 'chriskempson/base16-vim'
 call vundle#end()
 filetype plugin indent on
