@@ -16,7 +16,12 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'chriskempson/base16-vim'
 call vundle#end()
+
 filetype plugin indent on
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 " color scheme
 syntax enable
