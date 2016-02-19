@@ -51,3 +51,4 @@ nnoremap <C-H> <C-W><C-H>
 autocmd BufWritePre * :%s/\s\+$//e
 
 let g:ctrlp_show_hidden=1
+set colorcolumn=80
