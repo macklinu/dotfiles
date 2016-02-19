@@ -7,6 +7,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 " plugins
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'wikitopian/hardmode'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
@@ -17,6 +18,10 @@ Plugin 'mileszs/ack.vim'
 Plugin 'gregsexton/MatchTag'
 Plugin 'chriskempson/base16-vim'
 call vundle#end()
+
+" Enable hard mode
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
 filetype plugin indent on
 set expandtab
