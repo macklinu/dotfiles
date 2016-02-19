@@ -14,6 +14,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'gregsexton/MatchTag'
 Plugin 'chriskempson/base16-vim'
 call vundle#end()
 
