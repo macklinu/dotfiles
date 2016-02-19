@@ -50,5 +50,11 @@ inoremap kj <Esc>
 " Remove whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
-let g:ctrlp_show_hidden=1
 set colorcolumn=80
+
+" CtrlP options
+let g:ctrlp_regexp=1
+let g:ctrlp_match_window='bottom,order:btt,min:1,max:5,results:5'
+let g:ctrlp_show_hidden=1
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+let g:ctrlp_custom_ignore='\v[\/]\.(git)$'
