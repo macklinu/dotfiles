@@ -17,6 +17,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'gregsexton/MatchTag'
 Plugin 'chriskempson/base16-vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 
 " Enable hard mode
@@ -58,3 +60,6 @@ let g:ctrlp_match_window='bottom,order:btt,min:1,max:5,results:5'
 let g:ctrlp_show_hidden=1
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 let g:ctrlp_custom_ignore='\v[\/]\.(git)$'
+
+" Airline options
+let g:airline_theme='solarized'
