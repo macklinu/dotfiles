@@ -39,6 +39,14 @@ syntax enable
 set background=dark
 colorscheme base16-solarized
 
+if has('gui_running')
+  set guioptions-=m " Remove menu bar
+  set guioptions-=T " Remove toolbar
+  set guioptions-=r " Remove right-hand scrollbar
+  set guioptions-=L " Remove left-hand scrollbar
+  set guioptions-=e
+endif
+
 " search defaults
 set incsearch
 set ignorecase
