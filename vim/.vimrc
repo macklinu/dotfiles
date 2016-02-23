@@ -65,6 +65,9 @@ set number
 inoremap jk <Esc>
 inoremap kj <Esc>
 
+" Jump to line number quickly in normal mode
+nnoremap <CR> G
+
 " Remove whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
