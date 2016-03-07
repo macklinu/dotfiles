@@ -12,6 +12,11 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-sensible'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-endwise'
+Plugin 'mattn/emmet-vim'
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
@@ -20,7 +25,6 @@ Plugin 'mileszs/ack.vim'
 Plugin 'gregsexton/MatchTag'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'mhinz/vim-startify'
 Plugin 'chriskempson/base16-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -39,10 +43,12 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
+set autoread
+
 " color scheme
 syntax enable
 set background=dark
-colorscheme base16-solarized
+colorscheme base16-flat
 
 if has('gui_running')
   set guioptions-=m " Remove menu bar
@@ -61,6 +67,8 @@ set nohlsearch
 set cursorline
 set number
 
+let mapleader=','
+
 " j and k mash escape
 inoremap jk <Esc>
 inoremap kj <Esc>
@@ -73,6 +81,10 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 set colorcolumn=80
 
+" more natural splits
+set splitbelow
+set splitright
+
 " CtrlP options
 let g:ctrlp_regexp=1
 let g:ctrlp_match_window='bottom,order:btt,min:1,max:5,results:5'
@@ -82,3 +94,16 @@ let g:ctrlp_custom_ignore='\v[\/]\.(git)$'
 
 " Airline options
 let g:airline_theme='solarized'
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+let g:rspec_command = "Dispatch bundle exec rspec {spec}"
+let g:rspec_runner = "os_x_iterm"
+
+" Rubocop
+nnoremap <Leader>r :Dispatch bundle exec rubocop %<CR>
+" Rubocop autocorrect current file
+nnoremap <Leader>ra :Dispatch bundle exec rubocop -a %<CR>
