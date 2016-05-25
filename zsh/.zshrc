@@ -45,6 +45,8 @@ ZSH_THEME="ys"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+TERM=xterm-256color
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -53,8 +55,11 @@ plugins=(adb brew bundler colored-man-pages emoji git git-extras gradle heroku h
 
 # User configuration
 
+export ANDROID_HOME=/Users/macklinu/dev/android/sdk
+
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+export PATH="$PATH:$ANDROID_HOME/tools"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -78,3 +83,12 @@ export EDITOR='vim'
 #
 # Example aliases
 alias git=hub
+
+# Base16 Shell
+# BASE16_SHELL="$HOME/.config/base16-shell/base16-material.dark.sh"
+# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+
+export NVM_DIR="/Users/macklinu/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

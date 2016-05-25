@@ -10,6 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'wikitopian/hardmode'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
@@ -23,9 +24,12 @@ Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'gregsexton/MatchTag'
+Plugin 'AndrewRadev/switch.vim'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'chase/vim-ansible-yaml'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'chriskempson/base16-vim'
+Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
@@ -46,9 +50,10 @@ set softtabstop=2
 set autoread
 
 " color scheme
+let base16colorspace=256  " Access colors present in 256 colorspace
 syntax enable
 set background=dark
-colorscheme base16-flat
+colorscheme gruvbox
 
 if has('gui_running')
   set guioptions-=m " Remove menu bar
@@ -93,7 +98,7 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 let g:ctrlp_custom_ignore='\v[\/]\.(git)$'
 
 " Airline options
-let g:airline_theme='solarized'
+let g:airline_theme='base16'
 
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
