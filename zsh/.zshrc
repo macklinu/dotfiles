@@ -45,7 +45,7 @@ ZSH_THEME="ys"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-TERM=xterm-256color
+# TERM=xterm-256color
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -88,7 +88,7 @@ alias git=hub
 # BASE16_SHELL="$HOME/.config/base16-shell/base16-material.dark.sh"
 # [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
-source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+# source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 
 export NVM_DIR="/Users/macklinu/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

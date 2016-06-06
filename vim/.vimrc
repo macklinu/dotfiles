@@ -55,10 +55,9 @@ set softtabstop=2
 set autoread
 
 " color scheme
-let base16colorspace=256  " Access colors present in 256 colorspace
 syntax enable
 set background=dark
-colorscheme gruvbox
+colorscheme base16-solarized
 
 if has('gui_running')
   set guioptions-=m " Remove menu bar
@@ -103,7 +102,7 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 let g:ctrlp_custom_ignore='\v[\/]\.(git)$'
 
 " Airline options
-let g:airline_theme='base16'
+let g:airline_theme='solarized'
 
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
