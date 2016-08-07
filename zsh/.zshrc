@@ -59,6 +59,7 @@ export ANDROID_HOME=/Users/macklinu/dev/android/sdk
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
 export PATH="$PATH:$ANDROID_HOME/tools"
 # export MANPATH="/usr/local/man:$MANPATH"
 
