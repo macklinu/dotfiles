@@ -99,7 +99,7 @@ let g:ctrlp_regexp=1
 let g:ctrlp_match_window='bottom,order:btt,min:1,max:5,results:5'
 let g:ctrlp_show_hidden=1
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
-let g:ctrlp_custom_ignore='\v[\/]\.(git)$'
+let g:ctrlp_custom_ignore='\v[\/]\.(git)$|node_modules'
 
 " Airline options
 let g:airline_theme='solarized'
@@ -116,3 +116,5 @@ let g:rspec_runner = "os_x_iterm"
 nnoremap <Leader>r :Dispatch bundle exec rubocop %<CR>
 " Rubocop autocorrect current file
 nnoremap <Leader>ra :Dispatch bundle exec rubocop -a %<CR>
+
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
