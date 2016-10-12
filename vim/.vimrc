@@ -57,7 +57,7 @@ set autoread
 " color scheme
 syntax enable
 set background=dark
-colorscheme base16-solarized
+colorscheme base16-solarized-dark
 
 if has('gui_running')
   set guioptions-=m " Remove menu bar
