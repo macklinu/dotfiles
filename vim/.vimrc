@@ -37,6 +37,7 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ayu-theme/ayu-vim'
 call vundle#end()
 
 " Enable hard mode
@@ -56,8 +57,9 @@ set autoread
 
 " color scheme
 syntax enable
-set background=dark
-colorscheme base16-solarized-dark
+set termguicolors     " enable true colors support
+let ayucolor="mirage"
+colorscheme ayu
 
 if has('gui_running')
   set guioptions-=m " Remove menu bar
