@@ -51,7 +51,7 @@ ZSH_THEME="refined"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew bundler colored-man-pages emoji git git-extras heroku httpie jira npm postgres tmux yarn zsh_reload)
+plugins=(brew bundler colored-man-pages git git-extras heroku npm postgres yarn zsh_reload)
 
 # User configuration
 
