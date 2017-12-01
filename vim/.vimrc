@@ -38,6 +38,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ayu-theme/ayu-vim'
+Plugin 'rust-lang/rust.vim'
 call vundle#end()
 
 " Enable hard mode
