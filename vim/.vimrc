@@ -39,6 +39,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'rust-lang/rust.vim'
+Plugin 'timonv/vim-cargo'
 call vundle#end()
 
 " Enable hard mode
