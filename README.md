@@ -8,7 +8,7 @@ brew install stow
 
 Check this repo out to `~/dotfiles` and stow it up.
 
-```
+```sh
 # from ~/dotfiles
 
 # symlink vim files
@@ -18,8 +18,4 @@ stow vim
 stow -D vim
 ```
 
-Heavily inspired by:
-
-- [tomauty/dotfiles](https://github.com/tomauty/dotfiles)
-
-:v:
+Heavily inspired by [tomauty/dotfiles](https://github.com/tomauty/dotfiles)
