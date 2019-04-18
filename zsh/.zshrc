@@ -51,14 +51,12 @@ ZSH_THEME="refined"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew bundler colored-man-pages git git-extras heroku npm postgres yarn zsh_reload)
+plugins=(brew colored-man-pages git npm npx nvm yarn zsh_reload)
 
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-# export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -66,13 +64,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-export EDITOR='vim'
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+export EDITOR="vim"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -81,15 +73,6 @@ export EDITOR='vim'
 #
 # Example aliases
 alias git=hub
-
-# Base16 Shell
-# BASE16_SHELL="$HOME/.config/base16-shell/base16-material.dark.sh"
-# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-
-# source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
-
-export NVM_DIR="/Users/macklinu/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export GPG_TTY=$(tty)
 
