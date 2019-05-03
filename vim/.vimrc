@@ -8,38 +8,21 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'wikitopian/hardmode'
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
-Plugin 'mattn/emmet-vim'
-Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'gregsexton/MatchTag'
 Plugin 'AndrewRadev/switch.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'moll/vim-node'
-Plugin 'mxw/vim-jsx'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'chase/vim-ansible-yaml'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'chriskempson/base16-vim'
-Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ayu-theme/ayu-vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'timonv/vim-cargo'
+Plugin 'haishanh/night-owl.vim'
 call vundle#end()
 
 " Enable hard mode
@@ -58,10 +41,13 @@ set softtabstop=2
 set autoread
 
 " color scheme
+if (has("termguicolors"))
+ set termguicolors
+endif
+
 syntax enable
 set termguicolors     " enable true colors support
-let ayucolor="mirage"
-colorscheme ayu
+colorscheme night-owl
 
 if has('gui_running')
   set guioptions-=m " Remove menu bar
@@ -107,18 +93,3 @@ let g:ctrlp_custom_ignore='\v[\/]\.(git)$|node_modules'
 
 " Airline options
 let g:airline_theme='solarized'
-
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-let g:rspec_command = "Dispatch bundle exec rspec {spec}"
-let g:rspec_runner = "os_x_iterm"
-
-" Rubocop
-nnoremap <Leader>r :Dispatch bundle exec rubocop %<CR>
-" Rubocop autocorrect current file
-nnoremap <Leader>ra :Dispatch bundle exec rubocop -a %<CR>
-
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
