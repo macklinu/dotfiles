@@ -1,29 +1,34 @@
 set nocompatible  " be iMproved, required
 filetype off      " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" plugins
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'wikitopian/hardmode'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'gregsexton/MatchTag'
-Plugin 'AndrewRadev/switch.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'haishanh/night-owl.vim'
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+Plug 'wikitopian/hardmode'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-bundler'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+Plug 'gregsexton/MatchTag'
+Plug 'AndrewRadev/switch.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ayu-theme/ayu-vim'
+Plug 'prettier/vim-prettier'
+call plug#end()
 
 " Enable hard mode
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
@@ -47,7 +52,8 @@ endif
 
 syntax enable
 set termguicolors     " enable true colors support
-colorscheme night-owl
+let ayucolor="mirage"
+colorscheme ayu
 
 if has('gui_running')
   set guioptions-=m " Remove menu bar
@@ -75,6 +81,8 @@ inoremap kj <Esc>
 " Jump to line number quickly in normal mode
 nnoremap <CR> G
 
+nnoremap <Leader>n :NERDTreeToggle<CR>
+
 " Remove whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -93,3 +101,6 @@ let g:ctrlp_custom_ignore='\v[\/]\.(git)$|node_modules'
 
 " Airline options
 let g:airline_theme='solarized'
+
+" Prettier options
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yml,*.html,*.rb PrettierAsync
