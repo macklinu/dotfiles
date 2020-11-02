@@ -28,6 +28,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ayu-theme/ayu-vim'
 Plug 'prettier/vim-prettier'
+Plug 'rust-lang/rust.vim'
+Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 " Enable hard mode
@@ -104,3 +106,15 @@ let g:airline_theme='solarized'
 
 " Prettier options
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yml,*.html,*.rb PrettierAsync
+
+let g:rustfmt_autosave = 1
+
+" Recommended syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

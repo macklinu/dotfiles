@@ -5,7 +5,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="refined"
+# ZSH_THEME="refined"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,14 +51,21 @@ ZSH_THEME="refined"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew colored-man-pages git npm npx nvm yarn zsh_reload)
+plugins=(brew docker docker-compose colored-man-pages git golang npm nvm ruby rbenv yarn zsh_reload z)
 
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+export PATH="$(go env GOPATH)/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
 
 source $ZSH/oh-my-zsh.sh
+compinit
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -74,11 +81,27 @@ export EDITOR="vim"
 # Example aliases
 alias git=hub
 
-export GPG_TTY=$(tty)
+function docker-stop() {
+  docker ps --format '{{.ID}}\t{{.Image}}' | fzf -0 | awk '{print $1}' | xargs docker stop
+}
 
-if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
-  source ~/.gnupg/.gpg-agent-info
-  export GPG_AGENT_INFO
-else
-  eval $(gpg-agent --daemon  ~/.gnupg/.gpg-agent-info)
-fi
+function zode() {
+  code $(z -e $1)
+}
+
+function yww() {
+  yarn workspace $(yarn --silent workspaces info --json | jq 'keys | .[]' -r | fzf) $@
+}
+
+export STARSHIP_CONFIG=~/.starship.toml
+eval "$(starship init zsh)"
+
+# export GPG_TTY=$(tty)
+
+# if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
+#   source ~/.gnupg/.gpg-agent-info
+#   export GPG_AGENT_INFO
+# else
+#   eval $(gpg-agent --daemon  ~/.gnupg/.gpg-agent-info)
+# fi
+
