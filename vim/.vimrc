@@ -26,7 +26,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ayu-theme/ayu-vim'
+Plug 'wojciechkepka/vim-github-dark'
 Plug 'prettier/vim-prettier'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-syntastic/syntastic'
@@ -54,8 +54,8 @@ endif
 
 syntax enable
 set termguicolors     " enable true colors support
-let ayucolor="mirage"
-colorscheme ayu
+let g:gh_color = "soft"
+colorscheme ghdark
 
 if has('gui_running')
   set guioptions-=m " Remove menu bar

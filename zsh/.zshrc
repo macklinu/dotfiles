@@ -51,14 +51,14 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew docker docker-compose colored-man-pages git golang npm nvm ruby rbenv yarn zsh_reload z)
+plugins=(brew bundler colored-man-pages git npm nvm ruby rails yarn)
 
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
-export PATH="$(go env GOPATH)/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
@@ -79,7 +79,6 @@ export EDITOR="vim"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias git=hub
 
 function docker-stop() {
   docker ps --format '{{.ID}}\t{{.Image}}' | fzf -0 | awk '{print $1}' | xargs docker stop
@@ -96,12 +95,6 @@ function yww() {
 export STARSHIP_CONFIG=~/.starship.toml
 eval "$(starship init zsh)"
 
-# export GPG_TTY=$(tty)
-
-# if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
-#   source ~/.gnupg/.gpg-agent-info
-#   export GPG_AGENT_INFO
-# else
-#   eval $(gpg-agent --daemon  ~/.gnupg/.gpg-agent-info)
-# fi
-
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
