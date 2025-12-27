@@ -1,0 +1,6 @@
+theme = Catppuccin Mocha
+font-size = 16
+font-family = Inconsolata Nerd Font Mono
+macos-icon = holographic
+
+keybind = global:cmd+backquote=toggle_quick_terminal
