@@ -1,0 +1,10 @@
+[switch]
+cd = false
+
+
+[post-switch]
+herdr = """
+if [ "${HERDR_ENV:-}" = "1" ] && command -v herdr >/dev/null 2>&1; then
+  herdr worktree open --path {{ worktree_path }} --label {{ repo | sanitize }}/{{ branch | sanitize }} --focus
+fi
+"""
