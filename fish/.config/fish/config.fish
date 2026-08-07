@@ -1,7 +1,8 @@
 fish_add_path /opt/homebrew/bin
 fish_add_path ~/.deno/bin
+fish_add_path ~/.local/bin
 
-set -gx EDITOR vim
+set -gx EDITOR nvim
 set -gx XDG_CONFIG_HOME ~/.config
 set -gx DOCKER_DEFAULT_PLATFORM linux/amd64
 
@@ -10,6 +11,7 @@ alias ls eza
 alias ll 'ls -al'
 alias lzd lazydocker
 alias lzg lazygit
+alias opencode 'ocx opencode'
 
 alias gc 'git commit'
 alias gf 'git fetch'
@@ -29,5 +31,9 @@ tv init fish | source
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
-# opencode
-fish_add_path /Users/macklinu/.opencode/bin
+# nub
+set -gx PATH $HOME/.nub/bin $PATH
+
+
+# nub shims
+set -gx PATH $HOME/.nub/shims $PATH
